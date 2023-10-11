@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>country game</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/queries.css">
+
+</head>
+
+<body>
+  <header class="header">
+    <p class="info">
+      Guess a country's information.
+      Score increases when an answer is right.
+      Score decreases if an answer is wrong
+      All fields must be filled.
+    </p>
+  </header>
+
+  <main>
+
+    <div class="score__div">
+      <p class="score">Score: 0</p>
+      <p class="score highscore">Highscore: 0</p>
+    </div>
+
+    <div class="flag__div">
+      <img class="flag" src="img/placeholder.svg">
+    </div>
+
+    <div class="errMsg hidden">
+      <p class="errMsg__p">DSAFSDFSD</p>
+    </div>
+
+    <div class="container">
+      <form class="form">
+        <label class="label">Capital</label>
+        <input class="input__field" type="text" placeholder="Capital name" name="capital">
+        <label class="label">Country</label>
+        <input class="input__field" type="text" placeholder="Country name" name="country">
+        <label class="label">Continent</label>
+        <input class="input__field" type="text" placeholder="Continent name" name="continent">
+        <label class="label">Landlocked</label>
+        <input class="input__field" type="text" placeholder="Landlocked? (yes/no)" name="landlocked">
+        <!-- TODO: add timezones
+      <label class="label">Timezone(s)</label>
+      <input class="input__field" type="text" placeholder="timezone" name="timezones"> -->
+        <!-- TODO: add currency -->
+        <!-- <label class="label">Currency</label>
+        <input class="input__field" type="text" placeholder="Currency (no symbol)" name="currency"> -->
+        <label class="label">Language</label>
+        <input class="input__field" type="text" placeholder="Official language" name="language">
+      </form>
+    </div>
+
+    <div class="container">
+      <button type="module" class="done">Next Country</button>
+    </div>
+  </main>
+
+  <script type="module" src="js/script.js"></script>
+</body>
+
+</html>
