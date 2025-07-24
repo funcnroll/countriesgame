@@ -98,8 +98,9 @@ async function checkInput() {
   errorMsg.classList.add("hidden");
 
   // generate the countries array
-
-  await getCountryNames();
+  if (!countries.length) {
+    await getCountryNames();
+  }
 
   // get a random country
 
