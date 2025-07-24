@@ -27,7 +27,10 @@ function timeout() {
  */
 async function getCountryNames() {
   try {
-    const req = await Promise.race([fetch(`${API_URL}/all`), timeout()]);
+    const req = await Promise.race([
+      fetch(`${API_URL}/all?fields=cioc`),
+      timeout(),
+    ]);
 
     if (!req.ok) {
       errorMsg.classList.remove("hidden");
@@ -37,12 +40,9 @@ async function getCountryNames() {
 
     const data = await req.json();
     data.forEach((country) => {
-      const tmpCountries = [];
-      const { cioc } = country;
-      tmpCountries.push(cioc);
-      tmpCountries.filter((country) => {
-        if (country !== undefined) countries.push(country);
-      });
+      if (country.cioc !== undefined) {
+        countries.push(country.cioc);
+      }
     });
   } catch (err) {
     throw err;
